@@ -1,4 +1,6 @@
-public class rn01 {
+package nn_generic;
+
+public class Rn01 {
   
   public static double sigmoidea(double x){
     return 1/(1+Math.exp(-x));

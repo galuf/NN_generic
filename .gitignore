@@ -1,0 +1,4 @@
+*.class
+/NN_generic/nbproject/private/
+/nbproject/private/
+/build/
