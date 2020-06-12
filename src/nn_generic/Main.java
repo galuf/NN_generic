@@ -23,6 +23,8 @@ public class Main {
     System.out.println();
     Rn01.mostrar(Rn01.matrizSigmoidea(Rn01.dot(Rn01.onesRow(pesos2),Rn01.onesColumn(Rn01.matrizSigmoidea(Rn01.dot(Rn01.onesRow(pesos1),Rn01.onesColumn(input)))))));
     
+    Rn01.example_varargs(1,3,4);
+    Rn01.example_varargs(1,4,5,6,7);
     // mostrar(onesColumn(m2));
     // mostrar(onesRow(m1));
     // mostrar(transpuesta(m2));

@@ -85,4 +85,7 @@ public class Rn01 {
     return mT;
   }
   
+  public static void example_varargs(int ...a){
+     System.out.println("We have: "+a.length+" elements.");
+  }
 }
