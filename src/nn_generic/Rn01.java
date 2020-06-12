@@ -84,32 +84,5 @@ public class Rn01 {
     }
     return mT;
   }
-
-  public static void main(String[] args) {
-
-    double [][] input = {{1},{1}};
-    double [][] output = {{1}};
-
-    double [][] pesos1 = {{2,-2},{1,3}};
-    double [][] pesos2 = {{3,-2}};
-    mostrar(onesRow(pesos1));
-    System.out.println();
-    mostrar(onesColumn(input));
-    System.out.println();
-    mostrar(dot(onesRow(pesos1),onesColumn(input)));
-    System.out.println();
-    mostrar(matrizSigmoidea(dot(onesRow(pesos1),onesColumn(input))));
-    System.out.println();
-    mostrar(onesColumn(matrizSigmoidea(dot(onesRow(pesos1),onesColumn(input)))));
-    System.out.println();
-    mostrar(dot(onesRow(pesos2),onesColumn(matrizSigmoidea(dot(onesRow(pesos1),onesColumn(input))))));
-    System.out.println();
-    mostrar(matrizSigmoidea(dot(onesRow(pesos2),onesColumn(matrizSigmoidea(dot(onesRow(pesos1),onesColumn(input)))))));
-    
-    // mostrar(onesColumn(m2));
-    // mostrar(onesRow(m1));
-    // mostrar(transpuesta(m2));
-    // mostrar(dot(m1,m2));
-    // mostrar(matrizSigmoidea(dot(m1,m2)));
-  }
+  
 }
