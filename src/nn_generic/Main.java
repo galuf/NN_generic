@@ -1,5 +1,8 @@
 package nn_generic;
 
+import java.nio.file.Paths;
+import java.util.List;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -30,6 +33,12 @@ public class Main {
     // mostrar(transpuesta(m2));
     // mostrar(dot(m1,m2));
     // mostrar(matrizSigmoidea(dot(m1,m2)));
+    //ejemplo de como leer
+        //   int[] labels = MnistReader.getLabels(Paths.get("C:\\Users\\gerson7\\Documents\\NetBeansProjects\\JavaApplication1\\src\\javaapplication1\\train-labels-idx1-ubyte.gz"));
+        //  System.out.println("label: "+labels.length); 
+      
+         //   List<int[][]> images = MnistReader
+          //          .getImages(Paths.get("C:\\Users\\gerson7\\Documents\\NetBeansProjects\\JavaApplication1\\src\\javaapplication1\\train-images-idx3-ubyte.gz"));
   }
     
 }
