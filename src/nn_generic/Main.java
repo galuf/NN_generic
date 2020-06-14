@@ -1,7 +1,8 @@
 package nn_generic;
 
+import java.util.List;
+
 public class Main {
-    
     public static void main(String[] args) {
         
         double ingreso[][]={
