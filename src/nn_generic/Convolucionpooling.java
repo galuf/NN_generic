@@ -1,50 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package nn_generic;
-
-/**
- *
- * @author gerson7
- */
-
+package NN_generic;
 
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public final class Convolucionpooling extends Component {
+public final class Leerjpg extends Component {
 
     public static void main(String[] foo) throws IOException {
         BufferedImage img = null;
-       // img = ImageIO.read(new File("C:\\Users\\gerson7\\Documents\\leerjpg\\src\\leerjpg\\tanque.jpg")); // eventually C:\\ImageTest\\pic2.jpg
-          //   mostrar(img);
+        img = ImageIO.read(new File("C:\\Users\\gerson7\\Documents\\leerjpg\\src\\leerjpg\\mnist\\0\\10.png")); // eventually C:\\ImageTest\\pic2.jpg
+        Color coloraux;
+        int mediapixel,colorSRGB;
+       mostrar(img);
 
-        //   marchThroughImage(img);
-        //   pastoEscalagrise(img);
-       //   mostrar(img);
-        //  escalar(img);
+  // marchThroughImage(img);
+      pastoEscalagrise(img);
+         mostrar(img);
+         double [][] imagenmatrix=null;
+       imagenmatrix= escalar(img);
         double[][] m1 = {{0, 0, 0, 0, 0, 0},
-            {0, 0, 0.6, 0.6, 0, 0}, 
-            {0, 0.6, 0, 0, 0.6, 0},
+        {0, 0, 0.6, 0.6, 0, 0},
+        {0, 0.6, 0, 0, 0.6, 0},
         {0, 0.6, 0.6, 0.6, 0.6, 0},
         {0, 0.6, 0, 0, 0.6, 0},
         {0, 0, 0, 0, 0, 0}
         };
         double[][] m2 = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
-        double[][] test={{0.0,0.0},{0.0 , 0.6}};
-        double[][]m3=new double[m1.length - m2.length + 1][m1.length - m2.length + 1];;
+      //  double[][] test={{0.0,0.0},{0.0 , 0.6}};
+        double[][]m3=new double[imagenmatrix.length - m2.length + 1][imagenmatrix.length - m2.length + 1];;
        double[][]m4=new double[m3.length/2][m3.length/2];;
 
-       m3=(convolucion(m1, m2));
+       m3=(convolucion(imagenmatrix, m2));
        prinmatriz(m3);
         System.out.println("");
        prinmatriz(matrixrelu(m3));
@@ -94,19 +88,19 @@ public final class Convolucionpooling extends Component {
             return 0;
         } 
     }
-    public static float[][] escalar(BufferedImage img) {
-        float matriz[][] = new float[img.getHeight()][img.getWidth()];
+    public static double[][] escalar(BufferedImage img) {
+        double matriz[][] = new double[img.getHeight()][img.getWidth()];
 
         for (int i = 0; i < img.getHeight(); i++) {
 
             for (int j = 0; j < img.getWidth(); j++) {
-                float mediapixel, colorSRGB;
+                double mediapixel, colorSRGB;
 
                 Color c = new Color(img.getRGB(j, i));
-                float pi = c.getRed();
+                double pi = c.getRed();
                 // System.out.println("hello fuckin world");
                 //  System.out.println(c.getRed());
-                //  System.out.printf("%.2f " ,(pi/255));
+                  System.out.printf("%.2f " ,(pi/255));
                 // colorSRGB=(pi<<16) | (pi<<8) | pi;
                 matriz[i][j] = (pi / 255);
             }
@@ -284,4 +278,3 @@ public final class Convolucionpooling extends Component {
     }
 
 }
-
