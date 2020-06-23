@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public final class Leerjpg extends Component {
+public final class ConvolucionPooling extends Component {
 
     public static void main(String[] foo) throws IOException {
         BufferedImage img = null;
