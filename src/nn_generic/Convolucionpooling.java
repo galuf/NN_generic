@@ -1,4 +1,4 @@
-package NN_generic;
+package nn_generic;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public final class Leerjpg extends Component {
+public final class Convolucionpooling extends Component {
 
     public static void main(String[] foo) throws IOException {
         BufferedImage img = null;
@@ -40,13 +40,19 @@ public final class Leerjpg extends Component {
 
        m3=(convolucion(imagenmatrix, m2));
        prinmatriz(m3);
+        System.out.println("longitud despues del filtro"+m3.length);
         System.out.println("");
+        System.out.println("-------");
+
        prinmatriz(matrixrelu(m3));
-       m4=pooling(matrixrelu(m3));
+       System.out.println("-------");
+
+  //     m4=pooling(matrixrelu(m3))
+  ;
        
     //    System.out.printf("maximo : %f",mamixmomatriz(test)); 
       System.out.println("-------");
-      prinmatriz(m4);
+//      prinmatriz(m4);
         System.out.println("-------");
 // img =image;
     }
@@ -124,7 +130,7 @@ public final class Leerjpg extends Component {
                     for (int l = y, b = 0; l < n.length + y; l++, b++) {
                       //  System.out.printf("%11.1f", m[k][l]);
                         aux[a][b] = m[k][l];
-                     System.out.printf("%11.1f", aux[a][b]);
+         //            System.out.printf("%11.1f", aux[a][b]);
 
                     }
                     System.out.printf("\n");
